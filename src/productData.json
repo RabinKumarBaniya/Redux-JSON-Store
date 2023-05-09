@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "name": "iPhone 13",
+    "image": "https://d3cd3hu9wl72jo.cloudfront.net/1.d/preview/e/0/e08368db_d547f1b4_iPhone_13_mini_Green_PDP_Position-1A_Green_Color__SEA.jpg",
+    "price": 999
+  },
+  {
+    "id": 2,
+    "name": "Samsung Galaxy S21",
+    "image": "https://image-us.samsung.com/us/smartphones/galaxy-s21/palette/acc/FLP-87/EF-QG991_001_Front_Transparent_1600x1200.jpg?$product-details-jpg",
+    "price": 799
+  },
+  {
+    "id": 3,
+    "name": "Google Pixel 6",
+    "image": "https://m.media-amazon.com/images/I/71QQZr2pNSL._AC_UF894,1000_QL80_.jpg",
+    "price": 699
+  },
+  {
+    "id": 4,
+    "name": "OnePlus 9",
+    "image": "https://asset20.ckassets.com/resources/image/ckseller/CKS-Mobiles-000113_3-1624610333.jpg",
+    "price": 729
+  },
+  {
+    "id": 5,
+    "name": "Xiaomi Mi 11",
+    "image": "https://cdn.dxomark.com/wp-content/uploads/medias/post-75917/xiaomimi11.jpg",
+    "price": 599
+  }
+]
