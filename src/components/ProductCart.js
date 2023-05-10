@@ -9,11 +9,12 @@ import {
     MDBRipple,
     MDBContainer, MDBRow, MDBCol,
 } from 'mdb-react-ui-kit';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
+import { addToCart } from '../features/cartSlice';
 
 export default function App() {
-
     const items = useSelector((state) => state.allCart.items);
+    const dispatch = useDispatch();
 
     return (
         <div className='m-2'>
@@ -31,7 +32,7 @@ export default function App() {
                                 <MDBCardBody>
                                     <MDBCardTitle>{item.name}</MDBCardTitle>
                                     <MDBCardText>{item.price}</MDBCardText>
-                                    <MDBBtn href='#'>Add to Cart</MDBBtn>
+                                    <MDBBtn onClick={() => dispatch(addToCart(item))}>Add to Cart</MDBBtn>
                                 </MDBCardBody>
                             </MDBCard>
                         </MDBCol>
@@ -42,3 +43,4 @@ export default function App() {
         </div>
     );
 }
+
