@@ -1,8 +1,12 @@
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
+
+
+
 
 const CartPage = () => {
+    const { cart, totalQuantity, totalPrice } = useSelector((state) => state.allCart);
 
-    const { cart, totalQuantity, totalPrice } = useSelector((state) => state.allCart)
+
 
 
     return (
@@ -18,7 +22,7 @@ const CartPage = () => {
                                 <div className="card-body">
                                     {
                                         cart.map((data) => (
-                                            <div className="row">
+                                            <div className="row mt-4" key={data.id} >
                                                 <div className="col-lg-3 col-md-12 mb-4 mb-lg-0">
 
                                                     <div className="bg-image hover-overlay hover-zoom ripple rounded" data-mdb-ripple-color="light">
@@ -38,16 +42,13 @@ const CartPage = () => {
 
                                                 <div className="col-lg-4 col-md-6 mb-4 mb-lg-0">
                                                     <div className="d-flex mb-4" style={{ maxWidth: "300px" }}>
-                                                        <button className="btn btn-primary px-3 me-2"
-                                                            onclick="this.parentNode.querySelector('input[type=number]').stepDown()">
+                                                        <button className="btn btn-primary px-3 me-5" onClick={() => { }}>
                                                             <i className="fas fa-minus"></i>
                                                         </button>
                                                         <div className="form-outline">
-                                                            <input id="form1" min="0" name="quantity" value="1" type="number" className="form-control" />
-                                                            <label className="form-label" for="form1">Quantity</label>
+                                                            <input id="form1" min="0" name="quantity" defaultValue={data.quantity} className="form-control" />
                                                         </div>
-                                                        <button className="btn btn-primary px-3 ms-2"
-                                                            onclick="this.parentNode.querySelector('input[type=number]').stepUp()">
+                                                        <button className="btn btn-primary px-3 ms-5" onClick={() => { }}>
                                                             <i className="fas fa-plus"></i>
                                                         </button>
                                                     </div>
@@ -55,6 +56,9 @@ const CartPage = () => {
                                                         <strong>{data.price}</strong>
                                                     </p>
                                                 </div>
+
+// ...
+
                                             </div>
                                         ))
 
@@ -75,7 +79,7 @@ const CartPage = () => {
                                         <li
                                             className="list-group-item d-flex justify-content-between align-items-center border-0 px-0 pb-0">
                                             Total Quantity
-                                            <span>0</span>
+                                            <span>{totalQuantity}</span>
                                         </li>
                                         <li
                                             className="list-group-item d-flex justify-content-between align-items-center border-0 px-0 mb-3">
@@ -83,7 +87,7 @@ const CartPage = () => {
                                                 <strong>Total amount</strong>
 
                                             </div>
-                                            <span><strong>0</strong></span>
+                                            <span><strong>{totalPrice}</strong></span>
                                         </li>
                                     </ul>
 
