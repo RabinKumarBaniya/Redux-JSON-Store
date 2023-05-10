@@ -57,7 +57,7 @@ const CartPage = () => {
                                                     </p>
                                                 </div>
 
-// ...
+
 
                                             </div>
                                         ))
